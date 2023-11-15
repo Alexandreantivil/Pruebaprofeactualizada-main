@@ -2,8 +2,18 @@ import { Component, OnInit } from '@angular/core';
   import { LoadingController, AlertController } from '@ionic/angular';
   import { ActivatedRoute, Router } from '@angular/router';
   import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-  import { ClProducto } from '../model/ClProducto';
+  import { ClProducto } from '../modelo/ClProducto';
   import { ProductServiceService } from '../product-service.service';
+
+
+
+
+
+
+
+
+
+
 
 
   @Component({
@@ -18,10 +28,20 @@ import { Component, OnInit } from '@angular/core';
 
 
   export class ProductEditPage implements OnInit {
+
+
+    nombreprodErrorL: string = '';
+    precioErrorL: string = '';
+
+
+
+
+
+
     productForm!: FormGroup;
     producto: ClProducto = {
       idProducto: 0,
-      codigo: '09-G04',
+      codigo: '09-G03',
       nombreprod: '',
       precio: 0,
       cantidad: 0, // Nueva propiedad
@@ -58,7 +78,7 @@ import { Component, OnInit } from '@angular/core';
   this.id = this.route.snapshot.params['id'];
 
 
-  if (this.id !== 0 && this.id !== 0) {
+  if (this.id !== undefined && this.id !== null) {
     await this.getProduct(this.id); // Asegúrate de esperar a que se complete la carga del producto.
     this.productForm = this.formBuilder.group({
       'nombreprod': [this.producto.nombreprod, Validators.required],
@@ -72,11 +92,58 @@ import { Component, OnInit } from '@angular/core';
 }
 
 
+// async onFormSubmit() {
+//   console.log("onFormSubmit ID:" + this.id);
+
+
+//   if (this.productForm.valid) {
+//     if (this.producto && this.producto.idProducto) {
+//       this.producto.idProducto = this.id;
+//       this.producto.nombreprod = this.productForm.value.nombreprod;
+//       this.producto.direccion = this.productForm.value.direccion;
+//       this.producto.precio = this.productForm.value.precio;
+
+
+//       await this.restApi.updateProduct(this.id, this.producto).subscribe({
+//         next: (res) => {
+//           let id = res['idProducto'];
+//           this.presentAlertConfirm('Producto actualizado exitosamente.');
+//         },
+//         complete: () => {},
+//         error: (err) => {
+//           console.log(err);
+//           this.presentAlertConfirm('Error al actualizar el producto.');
+//         },
+//       });
+//     } else {
+//       console.error('El objeto producto o su propiedad idProducto es undefined');
+//       // Puedes mostrar un mensaje de error al usuario si es necesario.
+//     }
+//   }
+// }
+
+
+
+
 async onFormSubmit() {
-  console.log("onFormSubmit ID:" + this.id);
-
-
   if (this.productForm.valid) {
+    this.nombreprodErrorL = ''; // Reinicia el mensaje de error
+    this.precioErrorL = ''; // Reinicia el mensaje de error
+
+
+    if (!/^[a-zA-Z]+$/.test(this.productForm.value.nombreprod)) {
+      this.nombreprodErrorL = 'El nombre del producto solo debe contener letras.';
+      return;
+    }
+
+
+    if (!/^\d+$/.test(this.productForm.value.precio.toString())) {
+      this.precioErrorL = 'El precio del producto debe ser un número entero.';
+      return;
+    }
+   
+
+
     if (this.producto && this.producto.idProducto) {
       this.producto.idProducto = this.id;
       this.producto.nombreprod = this.productForm.value.nombreprod;
@@ -101,6 +168,12 @@ async onFormSubmit() {
     }
   }
 }
+
+
+
+
+
+
 
 
 async getProduct(id: number) {
@@ -173,6 +246,5 @@ async getProduct(id: number) {
       await alert.present();
     }
   }
-
 
 

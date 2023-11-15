@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ClProducto } from '../model/ClProducto';
+import { ClProducto } from '../modelo/ClProducto';
 @Component({
   selector: 'app-product-all',
   templateUrl: './product-all.page.html',
@@ -47,6 +47,5 @@ export class ProductAllPage implements OnInit {
   actualizar() { }
   grabarActualizarAutomatico() { }
 }
-
 
 

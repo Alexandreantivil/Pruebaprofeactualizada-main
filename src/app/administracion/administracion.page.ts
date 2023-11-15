@@ -39,6 +39,13 @@ export class AdministracionPage implements OnInit {
   navigateToProductListPage() {
     this.router.navigate(['/product-list']);
   }
+  navigateToProductDetailPage() {
+    this.navCtrl.navigateForward('/product-detail');
+  }
+
+  navigateToProductEditPage() {
+    this.navCtrl.navigateForward('/product-edit');
+  }
 
 
 

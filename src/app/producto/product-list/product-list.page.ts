@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoadingController } from '@ionic/angular';
-import { ClProducto } from '../model/ClProducto';
+import { ClProducto } from '../modelo/ClProducto';
 import { ProductServiceService } from '../product-service.service';
 
 
@@ -42,8 +42,7 @@ export class ProductListPage implements OnInit {
     await this.restApi.getProducts().subscribe({
       next: (res) => {
         // Filtrar los productos por código '09-G03'
-        this.productos = res.filter((producto) => producto.codigo === '09-G04');
-
+        this.productos = res.filter((producto) => producto.codigo === '09-G03');
         loading.dismiss();
       },
       complete: () => {},
@@ -54,6 +53,7 @@ export class ProductListPage implements OnInit {
     });
   }
 }
+
 
 
 

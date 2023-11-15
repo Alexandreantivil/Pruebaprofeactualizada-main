@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+
+
 // Import a utilizar
-
-
 import { ActivatedRoute, Router } from '@angular/router';
-
 import { LoadingController, AlertController } from '@ionic/angular';
-import { ClProducto } from '../model/ClProducto';
+import { ClProducto } from '../modelo/ClProducto';
 import { ProductServiceService } from '../product-service.service';
 
 
@@ -20,7 +19,7 @@ export class ProductDetailPage implements OnInit {
   // Creamos registro a utilizar en el Html
   producto: ClProducto = {
     idProducto: 0,
-    codigo: '09-G04',
+    codigo: '09-G03',
     nombreprod: '',
     precio: 0,
     cantidad: 0, // Nueva propiedad
@@ -164,6 +163,5 @@ export class ProductDetailPage implements OnInit {
       })
   }
 }
-
 
 

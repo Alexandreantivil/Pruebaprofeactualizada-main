@@ -18,6 +18,9 @@
         <ion-label position="floating">Nombre del Producto</ion-label>
         <ion-input type="text" formControlName="nombreprod"></ion-input>
       </ion-item>
+      <div *ngIf="nombreprodErrorL" class="error-message">
+        {{ nombreprodErrorL }}
+      </div>
     <ion-item>
   <ion-label position="stacked">Descripción</ion-label>
   <ion-input formControlName="direccion" type="text"></ion-input>
@@ -26,9 +29,13 @@
         <ion-label position="stacked">Precio</ion-label>
         <ion-textarea formControlName="precio"></ion-textarea>
       </ion-item>
+      <div *ngIf="precioErrorL" class="error-message">
+        {{ precioErrorL }}
+      </div>
      
       <ion-button type="submit" shape="round" color="primary" expand="block" [disabled]="!productForm.valid">Submit</ion-button>
     </form>
   </div>
 </ion-content>
+
 

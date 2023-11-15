@@ -48,6 +48,25 @@
       </ion-col>
     </ion-row>
 
+    <!-- Botones adicionales -->
+    <ion-row>
+      <ion-col size="12">
+        <ion-button expand="full" (click)="navigateToProductDetailPage()">
+          <ion-icon name="eye-outline" slot="start"></ion-icon>
+          Product Detail
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <ion-button expand="full" (click)="navigateToProductEditPage()">
+          <ion-icon name="create-outline" slot="start"></ion-icon>
+          Product Edit
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
     <!-- Otros elementos o secciones de la página -->
 
   </ion-grid>
