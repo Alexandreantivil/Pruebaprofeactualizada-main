@@ -1,0 +1,62 @@
+<ion-content class="ion-padding fade-in">
+  <div class="header-title">
+    Iniciar Sesión
+    <div class="subtitle">PideQR</div>
+    <div class="welcome">Bienvenido a PideQR</div>
+  </div>
+
+  <ion-card>
+    <img alt="Logo PideQR" src="../../assets/images/PIDEQR.svg" />
+  </ion-card>
+
+  <ion-item>
+    <ion-label position="stacked">Usuario</ion-label>
+    <ion-input type="text" [(ngModel)]="username"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Contraseña</ion-label>
+    <ion-input type="password" [(ngModel)]="password"></ion-input>
+  </ion-item>
+
+  <ion-button expand="full" (click)="login()">
+    <ion-icon name="log-in-outline" slot="start"></ion-icon>
+    Iniciar Sesión
+  </ion-button>
+
+  <ion-button expand="full" color="secondary" (click)="crearCuenta()">
+    <ion-icon name="person-add-outline" slot="start"></ion-icon>
+    Crear cuenta
+  </ion-button>
+
+  <ion-button expand="full" color="secondary" (click)="administracion()">
+    <ion-icon name="key-outline" slot="start"></ion-icon>
+    Administradores
+  </ion-button>
+
+  <ion-button expand="full" fill="clear" color="medium" (click)="olvidasteContrasena()">
+    <ion-icon name="help-outline" slot="start"></ion-icon>
+    ¿Olvidaste tu contraseña?
+  </ion-button>
+
+  <div class="error-message" style="color: red;"></div>
+
+  <ion-footer>
+    <ion-button (click)="volver()">
+      <ion-icon name="arrow-back-outline" slot="start"></ion-icon>
+      Volver
+    </ion-button>
+  </ion-footer>
+
+  <ion-footer>
+    <ion-buttons slot="start">
+      <ion-icon name="logo-facebook"></ion-icon>
+      <ion-icon name="logo-twitter"></ion-icon>
+      <ion-icon name="logo-instagram"></ion-icon>
+      <ion-icon name="logo-linkedin"></ion-icon>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <!-- Puedes agregar más iconos aquí si es necesario -->
+    </ion-buttons>
+  </ion-footer>
+</ion-content>

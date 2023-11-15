@@ -1,0 +1,58 @@
+<ion-header translucent="true">
+  <ion-toolbar>
+    <ion-title> Bienvenido a PideQR {{ username }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">PideQR</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <ion-card>
+      <img alt="Logo PideQR" src="../../assets/images/PIDEQR.svg" />
+      <ion-card-header>
+        <ion-card-title>Bienvenido a PideQR</ion-card-title>
+        <ion-card-subtitle>Escanea el código de tu mesa</ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content>
+        Entra a tu cuenta o crea una nueva usando los botones de abajo
+      </ion-card-content>
+    </ion-card> 
+    <div class="centrado">
+      <ion-card>
+        <!-- Botón de escanear con ícono -->
+        <ion-button (click)="irCamaraPage()">
+          <ion-icon name="scan-outline" slot="start"></ion-icon>
+          Escanea tu código QR
+        </ion-button>
+      </ion-card>
+    </div>
+  </div>
+
+  <!-- Muestra el nombre de usuario almacenado en el encabezado del contenido -->
+  <ion-header>
+    <ion-toolbar>
+      <ion-title size="large">Bienvenido a PideQR {{ username }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-footer>
+    <ion-toolbar>
+      <!-- Iconos en la parte inferior -->
+      <ion-buttons slot="start">
+        <ion-icon name="logo-facebook"></ion-icon>
+        <ion-icon name="logo-twitter"></ion-icon>
+        <ion-icon name="logo-instagram"></ion-icon>
+        <ion-icon name="logo-linkedin"></ion-icon>
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <!-- Puedes agregar más iconos aquí si es necesario -->
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-footer>
+</ion-content>

@@ -1,0 +1,61 @@
+.content-grid {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+.tempovariation,
+.volumen {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.custom-box {
+  padding: 1rem;
+}
+
+/* Define la animación fade-in */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fade-in 1.0s ease-out; /* Aplica la animación */
+}
+
+.centrado {
+  text-align: center;
+}
+
+/* Estilo para los iconos en el footer */
+ion-footer ion-icon {
+  font-size: 2rem;
+  margin: 0 0.5rem;
+}
+
+/* Estilo específico para los iconos de redes sociales en el footer */
+ion-footer ion-icon[name="logo-facebook"],
+ion-footer ion-icon[name="logo-twitter"],
+ion-footer ion-icon[name="logo-instagram"] ,
+ion-footer ion-icon[name="logo-linkedin"] {
+
+  color: #ffffff; /* Puedes ajustar el color según tus preferencias */
+  margin-top: 5px; /* Ajusta el margen superior según tus necesidades */
+}
+
+
+

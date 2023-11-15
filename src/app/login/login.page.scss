@@ -1,0 +1,89 @@
+ion-content {
+  --background: #000000;
+  --ion-background-color: #000000;
+  --ion-text-color: #ffffff;
+  --ion-color-step-500: #007bff;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 20px;
+
+  ion-item {
+    --ion-input-border-color: #ffffff;
+    --ion-input-placeholder-color: #ffffff;
+    margin-bottom: 15px;
+  }
+
+  ion-button {
+    margin-top: 20px;
+    --background: var(--ion-color-primary);
+    --color: #000000;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+
+    ion-button {
+      margin: 0 10px;
+    }
+  }
+
+  .header-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #ffffff; 
+    font-weight: bold;
+    text-align: center;
+
+    .subtitle {
+      font-size: 18px;
+      font-weight: normal;
+      color: #ffd7d7;
+    }
+
+    .welcome {
+      font-size: 24px;
+      color: #ffffff; 
+      font-weight: bold;
+      margin-top: 10px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .header-title {
+      font-size: 24px;
+
+      .subtitle {
+        font-size: 16px;
+      }
+
+      .welcome {
+        font-size: 20px;
+      }
+    }
+  }
+
+  /* Estilo para los iconos en el footer */
+  ion-footer ion-icon {
+    font-size: 2rem;
+    margin: 0 0.5rem;
+  }
+
+  /* Estilo específico para los iconos de redes sociales en el footer */
+  ion-footer ion-icon[name="logo-facebook"],
+  ion-footer ion-icon[name="logo-twitter"],
+  ion-footer ion-icon[name="logo-instagram"],  
+  ion-footer ion-icon[name="logo-twitter"]
+  {
+    color: #ffffff; /* Puedes ajustar el color según tus preferencias */
+    margin-top: 5px; /* Ajusta el margen superior según tus necesidades */
+  }
+
+
+}

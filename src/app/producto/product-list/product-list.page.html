@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Productos</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item>
+    <ion-label>
+      <font color="red">Utilizando un Accesador</font>
+      <ion-button [routerLink]="['/product-add']">Agregar</ion-button>
+    </ion-label>
+  </ion-item>
+
+  <ion-list>
+    <!-- Recorremos el arreglo de registros utilizando *ngFor -->
+    <ion-item *ngFor="let p of productos">
+      <!-- Icono al inicio (start) -->
+      <ion-icon name="star" slot="start"></ion-icon>
+      <!-- Campos de item -->
+      <ion-label>{{p.precio | currency:' ':true:'1.0-2'}}</ion-label>
+      <!-- Icono al final -->
+      <ion-icon name="information-circle" slot="end"></ion-icon>
+      <!-- routerLink para editar -->
+      <ion-button [routerLink]="['/product-edit', p.idProducto]">Edit</ion-button>
+      <!-- routerLink para ver detalles -->
+      <ion-button [routerLink]="['/product-detail', p.idProducto]">Detail</ion-button>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
