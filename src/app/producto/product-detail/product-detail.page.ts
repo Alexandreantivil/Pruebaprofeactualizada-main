@@ -19,7 +19,7 @@ export class ProductDetailPage implements OnInit {
   // Creamos registro a utilizar en el Html
   producto: ClProducto = {
     idProducto: 0,
-    codigo: '09-G03',
+    codigo: '09-G04',
     nombreprod: '',
     precio: 0,
     cantidad: 0, // Nueva propiedad
